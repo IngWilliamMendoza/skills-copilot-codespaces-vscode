@@ -1,13 +1,12 @@
-// Create new server
-var express = require('express');
-var app = express();
-
-// Create new server
-app.get('/comments', function(req, res){
-  res.send('This is a page for comments');
+// Create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server is listening at http://localhost:${port}`);
 });
 
-// Start server
-app.listen(3000, function(){
-  console.log('Server is running on port 3000');
+// Create a route
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
